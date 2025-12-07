@@ -1,7 +1,27 @@
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
+
+#include <iostream>
+#include <string>
+
+#pragma comment(lib, "ws2_32.lib")
+
+int main()
+{
+    WSADATA wsa;
+    if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
+        std::cerr << "WSAStartup failed: " << WSAGetLastError() << '\n';
+        return 1;
+    }
+
+    std::cout << "Winsock 2.2 initialized successfully in C++!\n";
+
+    WSACleanup();
+    return 0;
+}
 
 
 #pragma comment(lib, "Ws2_32.lib") #define PORT 8080
