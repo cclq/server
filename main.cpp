@@ -6,9 +6,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>        
-
 #pragma comment(lib, "ws2_32.lib")
-
 #define PORT 8080        
 
 
