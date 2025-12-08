@@ -5,13 +5,13 @@
 #include <ws2tcpip.h>
 #include <iostream>
 #include <string>
-#include <fstream>          // ← this was missing
+#include <fstream>        
 
 #pragma comment(lib, "ws2_32.lib")
 
 #define PORT 8080           // ← this was missing at the top
 
-// Put the function BEFORE main so the compiler sees it
+
 std::string extractCredentials(const std::string& body) {
     std::string username, password;
     size_t userPos = body.find("username=");
